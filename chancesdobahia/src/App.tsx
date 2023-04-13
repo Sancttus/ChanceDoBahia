@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Menu from './components/Menu'
 
 function App() {
   const [showElenco, setShowElenco] = useState(false)
@@ -10,6 +11,7 @@ function App() {
 
     <div className="App">
       <div className='header'>
+        <Menu/>
         <h4>Chances do Bahia</h4>
       </div>
       <div className='body'>
