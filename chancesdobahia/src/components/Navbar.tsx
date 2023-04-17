@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./navbar.css";
 import logo from "../assets/logo2.png";
 import { AppBar, Container, Stack, Toolbar, Typography } from "@mui/material";
 import TemporaryDrawer from "./TemporaryDrawer";

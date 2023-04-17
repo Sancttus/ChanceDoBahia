@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./navbar.css";
 import TwitterIcon from "../assets/Icon-Twitter.svg";
 import SpotifyIcon from "../assets/Icon-Spotify.svg";
 import InstagramIcon from "../assets/Icon-Instagram.svg";

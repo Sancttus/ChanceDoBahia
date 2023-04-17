@@ -76,7 +76,7 @@ const AchievementsComponent = () => {
                 direction="row"
                 alignItems="center"
                 justifyContent="space-around"
-                padding="0px 50px"
+                padding="0px 20px"
               >
                 <Typography fontFamily="OpenSans" fontWeight={700}>
                   2 Títulos{" "}
