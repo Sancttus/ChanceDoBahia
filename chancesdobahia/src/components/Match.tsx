@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./navbar.css";
 import ArrowRed from "../assets/arrowred.png";
 import ArrowBlue from "../assets/arrowblue.png";
 import logotimea from "../assets/red-bull-bragantino.svg";
