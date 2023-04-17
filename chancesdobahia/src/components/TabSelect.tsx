@@ -5,6 +5,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import MatchComponent from "./Match";
 import CompetitionComponent from "./Competition";
+import AchievementsComponent from "./achievements";
+import EnhancedTable from "./Team";
+import Divider from "@mui/material/Divider";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -50,12 +53,13 @@ export default function BasicTabs() {
     <Box
       sx={{
         width: "100%",
+        height: "100%",
         background: "#f8f8ff",
         fontFamily: "Play",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        minHeight: "800px",
+        minHeight: "667px",
       }}
     >
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -82,13 +86,27 @@ export default function BasicTabs() {
         <MatchComponent />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <CompetitionComponent />
+        <Box
+          sx={{
+            gap: "2",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <CompetitionComponent
+            titulo="Campeonato Brasileiro Série -A"
+            posicao={1}
+          />
+          <Divider />
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Box sx={{ background: "green" }}>elenco</Box>
+        <EnhancedTable />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Box sx={{ background: "red" }}>Conquistas</Box>
+        <Box>
+          <AchievementsComponent />
+        </Box>
       </TabPanel>
     </Box>
   );

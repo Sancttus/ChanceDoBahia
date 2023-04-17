@@ -16,7 +16,12 @@ const Navbar = () => {
           justifyContent={"space-between"}
         >
           <TemporaryDrawer />
-          <Typography fontFamily="OpenSans" fontWeight="700">
+          <Typography
+            fontFamily="OpenSans"
+            fontWeight="700"
+            justifySelf={"center"}
+            alignSelf={"center"}
+          >
             Chances do Bahia
           </Typography>
           <img src={logo} height="40px"></img>

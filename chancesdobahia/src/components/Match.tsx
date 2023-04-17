@@ -4,7 +4,7 @@ import ArrowRed from "../assets/arrowred.png";
 import ArrowBlue from "../assets/arrowblue.png";
 import logotimea from "../assets/red-bull-bragantino.svg";
 import logotimeb from "../assets/bahia.svg";
-import { Avatar, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Paper, Stack, Typography } from "@mui/material";
 
 const MatchComponent = () => {
   const percent = 43;
@@ -64,14 +64,34 @@ const MatchComponent = () => {
         >
           Chances de triunfo
         </Typography>
-        <Stack direction="row" alignItems="center" justifyContent="center">
-          <Typography fontFamily="OpenSans">{percent}% </Typography>{" "}
-          {percent > 50 ? (
-            <img src={ArrowBlue} height="20px"></img>
-          ) : (
-            <img src={ArrowRed} height="20px"></img>
-          )}
-        </Stack>
+        <Paper
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            background: "#eeeeee",
+            padding: "12px",
+          }}
+        >
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-around"
+            sx={{ width: "40%" }}
+          >
+            <Typography fontFamily="OpenSans" fontWeight={700}>
+              {percent}%{" "}
+            </Typography>{" "}
+            <Avatar sx={{ background: "#d7edfc" }}>
+              {percent > 50 ? (
+                <img src={ArrowBlue} height="20px"></img>
+              ) : (
+                <img src={ArrowRed} height="20px"></img>
+              )}
+            </Avatar>
+          </Stack>
+        </Paper>
       </Grid>
     </Paper>
   );
