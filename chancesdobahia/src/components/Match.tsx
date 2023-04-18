@@ -34,7 +34,7 @@ const MatchComponent = () => {
         }}
       >
         <Stack direction="row" alignItems="center" justifyContent="center">
-          <Typography fontFamily="OpenSans" component="div" fontSize="12px">
+          <Typography fontFamily="OpenSans" component="div" fontSize="14px">
             {data} - {hora}
           </Typography>
         </Stack>
@@ -45,7 +45,9 @@ const MatchComponent = () => {
           justifyContent="space-around"
           sx={{ minWidth: "280px" }}
         >
-          <Typography fontFamily="OpenSans">{siglatimea}</Typography>
+          <Typography fontFamily="OpenSans" fontWeight={700}>
+            {siglatimea}
+          </Typography>
           <Avatar
             alt="RRB"
             src={logotimeb}
@@ -54,12 +56,14 @@ const MatchComponent = () => {
           />
           X
           <Avatar alt="EBC" src={logotimea} variant="square" />
-          <Typography fontFamily="OpenSans">{siglatimeb}</Typography>
+          <Typography fontFamily="OpenSans" fontWeight={700}>
+            {siglatimeb}
+          </Typography>
         </Stack>
         <Typography
           sx={{ alignSelf: "center" }}
           fontFamily="OpenSans"
-          fontSize="11px"
+          fontSize="13px"
         >
           Chances de triunfo
         </Typography>
