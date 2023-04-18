@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ArrowRed from "../assets/arrowred.png";
 import ArrowBlue from "../assets/arrowblue.png";
-import campeonato from "../assets/Campeonato_Brasileiro_Série_A_logo_adobe_express.svg";
+import campeonato from "../assets/Campeonato_Brasileiro_Série_A_logo.png";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
 import { Avatar, Grid, Paper, Stack, Typography } from "@mui/material";
@@ -38,7 +38,7 @@ const AchievementsComponent = () => {
           <Avatar
             src={campeonato}
             variant="square"
-            sx={{ height: "70px", width: "70px" }}
+            sx={{ height: "80px", width: "70px" }}
           />
         </Grid>
         <Grid

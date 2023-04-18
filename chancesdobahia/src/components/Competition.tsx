@@ -9,7 +9,7 @@ import meiodatabela from "../assets/meiodatabela.png";
 import rebaixamento from "../assets/arrowred.png";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
-import campeonato from "../assets/Campeonato_Brasileiro_Série_A_logo_adobe_express.svg";
+import campeonato from "../assets/Campeonato_Brasileiro_Série_A_logo.png";
 
 import {
   Avatar,
@@ -56,7 +56,10 @@ const CompetitionComponent = ({ posicao, titulo }: Props) => {
           <Avatar
             src={campeonato}
             variant="square"
-            sx={{ height: "70px", width: "70px" }}
+            sx={{
+              height: "80px",
+              width: "70px",
+            }}
           />
         </Grid>
         <Grid
@@ -82,7 +85,7 @@ const CompetitionComponent = ({ posicao, titulo }: Props) => {
             <Typography
               sx={{ alignSelf: "center" }}
               fontFamily="OpenSans"
-              fontSize="10px"
+              fontSize="12px"
             >
               Previsão:
             </Typography>
@@ -270,11 +273,11 @@ const CompetitionComponent = ({ posicao, titulo }: Props) => {
               <Typography
                 sx={{ alignSelf: "center" }}
                 fontFamily="OpenSans"
-                fontSize="10px"
+                fontSize="14px"
               >
                 Posição Atual:
               </Typography>
-              <Typography fontFamily="OpenSans" fontSize="10px">
+              <Typography fontFamily="OpenSans" fontSize="14px">
                 1ª Colocação
               </Typography>
             </Stack>
