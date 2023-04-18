@@ -83,7 +83,15 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <MatchComponent />
+        <MatchComponent
+          date="14/04/2023"
+          hour="18:30"
+          score1={2}
+          score2={0}
+          sigla1="ECB"
+          sigla2="RBR"
+          prediction={86}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box
