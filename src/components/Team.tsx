@@ -50,7 +50,7 @@ import arthur_sales from "../assets/arthur_sales.png";
 import kayky from "../assets/kayky.png";
 import everton from "../assets/everton.png";
 import biel from "../assets/biel.png";
-import Everaldo from "../assets/Everaldo.png";
+import Everaldo from "../assets/everaldo.png";
 import jacare from "../assets/jacare.png";
 import kannedy from "../assets/kannedy.png";
 import mugni from "../assets/mugni.png";
