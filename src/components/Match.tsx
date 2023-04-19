@@ -30,6 +30,7 @@ const MatchComponent = ({
         maxWidth: "320px",
         minHeight: "140px",
         minWidth: "320px",
+        margin: "20px",
       }}
     >
       <Grid

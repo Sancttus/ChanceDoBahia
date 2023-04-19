@@ -8,9 +8,24 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-
+// icons
+import GroupsIcon from "@mui/icons-material/Groups";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
+import SportsIcon from "@mui/icons-material/Sports";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 type Anchor = "top" | "left" | "bottom" | "right";
 
+const data = [
+  {
+    name: "Chances",
+    icon: <SwapVerticalCircleIcon />,
+  },
+  { name: "Partidas", icon: <SportsSoccerIcon /> },
+  { name: "Competições", icon: <SportsIcon /> },
+  { name: "Elenco", icon: <GroupsIcon /> },
+  { name: "Conquistas", icon: <EmojiEventsIcon /> },
+];
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
@@ -41,16 +56,12 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Chances do Bahia", "Elenco", "Conquistas", "Competições"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{/* <InboxIcon /> */}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          )
-        )}
+        {data.map((item, index) => (
+          <ListItem key={index}>
+            <ListItemIcon>{item.icon}</ListItemIcon>
+            <ListItemText primary={item.name} />
+          </ListItem>
+        ))}
       </List>
     </Box>
   );
