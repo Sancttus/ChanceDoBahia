@@ -22,237 +22,271 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { Avatar } from "@mui/material";
 
+import thiago_gomes from "../assets/thiago_gomes.png";
+import marcos_felipe from "../assets/marcos_felipe.png";
+import matheus_claus from "../assets/matheus_claus.png";
+import danilo_fernandes from "../assets/danilo_fernandes.png";
+import cicinho from "../assets/cicinho.png";
+import andre from "../assets/andre.png";
+import ryan from "../assets/ryan.png";
+import chavez from "../assets/chavez.png";
+import matheus_bahia from "../assets/matheus_bahia.png";
+import david_duarte from "../assets/david_duarte.png";
+import kanu from "../assets/kanu.png";
+import marcos_victor from "../assets/marcos_victor.png";
+import raul from "../assets/raul.png";
+import gabriel_xavier from "../assets/gabriel_xavier.png";
+import thaciano from "../assets/thaciano.png";
+import yago_felipe from "../assets/yago_felipe.png";
+import cauly from "../assets/cauly.png";
+import diego_rosa from "../assets/diego_rosa.png";
+import ricardo_goulart from "../assets/ricardo_goulart.png";
+import vehron from "../assets/vehron.png";
+import acevedo from "../assets/acevedo.png";
+import rezende from "../assets/rezende.png";
+import daniel from "../assets/daniel.png";
+import admir from "../assets/admir.png";
+import arthur_sales from "../assets/arthur_sales.png";
+import kayky from "../assets/kayky.png";
+import everton from "../assets/everton.png";
+import biel from "../assets/biel.png";
+import Everaldo from "../assets/Everaldo.png";
+import jacare from "../assets/jacare.png";
+import kannedy from "../assets/kannedy.png";
+import mugni from "../assets/mugni.png";
+
 interface Elenco {
   Posicao: string;
   Nome: string;
   Numero: number;
   Titular: string;
-  Avatar: any;
+  Avatar: string;
 }
+
 const elenco: Array<Elenco> = [
   {
     Posicao: "Goleiro",
     Nome: "Tiago Gomes",
     Numero: 12,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: thiago_gomes,
   },
   {
     Posicao: "Goleiro",
     Nome: "Marcos Felipe",
     Numero: 22,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: marcos_felipe,
   },
   {
     Posicao: "Goleiro",
     Nome: "Mateus Claus",
     Numero: 77,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: matheus_claus,
   },
   {
     Posicao: "Goleiro",
     Nome: "Danilo Fernandes",
     Numero: 1,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: danilo_fernandes,
   },
   {
     Posicao: "Lateral",
     Nome: "Cicinho",
     Numero: 40,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: cicinho,
   },
   {
     Posicao: "Lateral",
     Nome: "André",
     Numero: 13,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: andre,
   },
   {
     Posicao: "Lateral",
     Nome: "Ryan",
     Numero: 66,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: ryan,
   },
   {
     Posicao: "Lateral",
     Nome: "Jhoanner Chaves",
     Numero: 6,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: chavez,
   },
   {
     Posicao: "Lateral",
     Nome: "Matheus Bahia",
     Numero: 79,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: matheus_bahia,
   },
   {
     Posicao: "Zagueiro",
     Nome: "David Duarte",
     Numero: 33,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: david_duarte,
   },
   {
     Posicao: "Zagueiro",
     Nome: "Kanu",
     Numero: 4,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: kanu,
   },
   {
     Posicao: "Zagueiro",
     Nome: "Marcos Vitor",
     Numero: 44,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: marcos_victor,
   },
   {
     Posicao: "Zagueiro",
     Nome: "Raul Gustavo",
     Numero: 34,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: raul,
   },
   {
     Posicao: "Zagueiro",
     Nome: "Gabriel Xavier",
     Numero: 3,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: gabriel_xavier,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Thaciano",
     Numero: 28,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: thaciano,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Yago Felipe",
     Numero: 20,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: yago_felipe,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Cauly",
     Numero: 8,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: cauly,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Diego Rosa",
     Numero: 17,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: diego_rosa,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Ricardo Goulart",
     Numero: 16,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: ricardo_goulart,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Patrick Verhom",
     Numero: 23,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: vehron,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Acevedo",
     Numero: 26,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: acevedo,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Rezende",
     Numero: 5,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: rezende,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Daniel",
     Numero: 10,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: daniel,
   },
   {
     Posicao: "Meio-Campista",
     Nome: "Lucas Mugni",
     Numero: 19,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: mugni,
   },
   {
     Posicao: "Atacante",
     Nome: "Ademir",
     Numero: 7,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: admir,
   },
   {
     Posicao: "Atacante",
     Nome: "Arthur Sales",
     Numero: 14,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: arthur_sales,
   },
   {
     Posicao: "Atacante",
     Nome: "Kayky",
     Numero: 37,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: kayky,
   },
   {
     Posicao: "Atacante",
     Nome: "Everton",
     Numero: 18,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: everton,
   },
   {
     Posicao: "Atacante",
     Nome: "Biel",
     Numero: 11,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: biel,
   },
   {
     Posicao: "Atacante",
     Nome: "Everaldo",
     Numero: 9,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: Everaldo,
   },
   {
     Posicao: "Atacante",
     Nome: "Vitor Jacaré",
     Numero: 29,
     Titular: "Titular",
-    Avatar: "",
+    Avatar: jacare,
   },
   {
     Posicao: "Atacante",
     Nome: "Kennedy",
     Numero: 71,
     Titular: "Reserva",
-    Avatar: "",
+    Avatar: kannedy,
   },
 ];
 
@@ -485,7 +519,7 @@ export default function EnhancedTable() {
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer sx={{ padding: "10px" }}>
+        <TableContainer sx={{ padding: "auto" }}>
           <Table
             sx={{ minWidth: 375 }}
             aria-labelledby="tableTitle"
@@ -527,7 +561,7 @@ export default function EnhancedTable() {
                           scope="row"
                           padding="none"
                         >
-                          <Avatar>{}</Avatar>
+                          <Avatar src={row.Avatar}></Avatar>
                         </TableCell>
 
                         <TableCell align="right">{row.Nome}</TableCell>
