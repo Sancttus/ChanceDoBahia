@@ -69,7 +69,12 @@ const LastGame = ({
               sx={{ height: 48 }}
             />
             <h3>{placar1}</h3>X<h3>{placar2}</h3>
-            <Avatar alt={sigla2} src={brasão2} variant="square" />
+            <Avatar
+              alt={sigla2}
+              src={brasão2}
+              variant="square"
+              sx={{ height: 48 }}
+            />
             <Typography fontFamily="OpenSans">{sigla2}</Typography>
           </Stack>
           <Typography

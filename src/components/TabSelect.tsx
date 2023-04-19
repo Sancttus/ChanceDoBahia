@@ -20,6 +20,16 @@ import curitiba from "../assets/curitiba.png";
 import bragantino from "../assets/red-bull-bragantino.svg";
 import botafogo from "../assets/botafogo.png";
 import voltaRedonda from "../assets/volta_redonda.png";
+import bglogo from "../assets/fotor_2023-4-19_9_8_35.png";
+import Predictions from "./predictions";
+import GeneralCompetitionComponent from "./generalCompetition";
+
+// Icons
+import GroupsIcon from "@mui/icons-material/Groups";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
+import SportsIcon from "@mui/icons-material/Sports";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -71,175 +81,184 @@ export default function BasicTabs() {
         flexDirection: "column",
         alignItems: "center",
         minHeight: "667px",
+        backgroundImage: `url(${bglogo})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundAttachment: "scroll",
+        backgroundBlendMode: "soft-light",
       }}
     >
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={value} onChange={handleChange} sx={{ fontFamily: "Play" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons
+          sx={{ fontFamily: "Play" }}
+          allowScrollButtonsMobile
+        >
           <Tab
             sx={{ fontFamily: "Play" }}
-            label="Chances do Bahia"
+            label="Chances"
             {...a11yProps(0)}
+            icon={<SwapVerticalCircleIcon />}
           />
 
           <Tab
             sx={{ fontFamily: "Play", justifyContent: "center" }}
-            label="Jogos"
+            label="Partidas"
             {...a11yProps(1)}
+            icon={<SportsSoccerIcon />}
           />
           <Tab
             sx={{ fontFamily: "Play" }}
             label="Competições"
             {...a11yProps(2)}
+            icon={<SportsIcon />}
           />
-          <Tab sx={{ fontFamily: "Play" }} label="Elenco" {...a11yProps(3)} />
+          <Tab
+            sx={{ fontFamily: "Play" }}
+            icon={<GroupsIcon />}
+            label="Elenco"
+            {...a11yProps(3)}
+          />
 
           <Tab
+            icon={<EmojiEventsIcon />}
             sx={{ fontFamily: "Play" }}
             label="Conquistas"
             {...a11yProps(4)}
           />
-          {/* <Tab
-            sx={{ fontFamily: "Play" }}
-            label="Histórico"
-            {...a11yProps(5)}
-          /> */}
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Box>
-          <MatchComponent
-            date="14/04/2023"
-            hour="18:30"
-            score1={2}
-            score2={0}
-            sigla1="ECB"
-            sigla2="RBR"
-            prediction={86}
-          />
-        </Box>
+        <Predictions />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography sx={{ color: "black" }}>Próximos Jogos</Typography>
-        <LastGame
-          competicao="Campeonato Brasileiro"
-          date="23-04-2023"
-          hours="20:00"
-          brasão1={bahia}
-          brasão2={botafogo}
-          sigla1="ECB"
-          sigla2="BTF"
-        />
-        <LastGame
-          competicao="Capa do Brasil"
-          date="27-04-2023"
-          hours="19:00"
-          brasão1={bahia}
-          brasão2={voltaRedonda}
-          sigla1="ECB"
-          sigla2="VRD"
-        />
-        <LastGame
-          competicao="Campeonato Brasileiro"
-          date="27-04-2023"
-          hours="19:00"
-          brasão1={vasco}
-          brasão2={bahia}
-          sigla1="VAS"
-          sigla2="ECB"
-        />
-        <LastGame
-          competicao="Campeonato Brasileiro"
-          date="27-04-2023"
-          hours="19:00"
-          brasão1={bahia}
-          brasão2={curitiba}
-          sigla1="ECB"
-          sigla2="CTB"
-        />
-        <LastGame
-          competicao="Campeonato Brasileiro"
-          date="27-04-2023"
-          hours="19:00"
-          brasão1={santos}
-          brasão2={bahia}
-          sigla1="ECS"
-          sigla2="ECB"
-        />
-        <LastGame
-          competicao="Campeonato Brasileiro"
-          date="24-04-2023"
-          hours="20:00"
-          brasão1={bahia}
-          brasão2={botafogo}
-          sigla1="ECB"
-          sigla2="BTF"
-        />
-        <LastGame
-          competicao="Capa do Brasil"
-          date="27-04-2023"
-          hours="19:00"
-          brasão1={bahia}
-          brasão2={voltaRedonda}
-          sigla1="ECB"
-          sigla2="VRD"
-        />
+        <Box
+          sx={{
+            display: "flex",
 
-        <Typography sx={{ color: "black" }}>últimos Jogos</Typography>
-        <LastGame
-          competicao="Campeonato Baiano"
-          date="15-04-2023"
-          hours="18:30"
-          brasão1={bragantino}
-          brasão2={bahia}
-          sigla1="RRB"
-          sigla2="ECB"
-          placar1={2}
-          placar2={1}
-        />
-        <LastGame
-          competicao="Campeonato Baiano"
-          date="02-04-2023"
-          hours="18:00"
-          brasão1={bahia}
-          brasão2={jacuipense}
-          sigla1="ECB"
-          sigla2="JAC"
-          placar1={3}
-          placar2={0}
-        />
-        <LastGame
-          competicao="Campeonato Baiano"
-          date="22-03-2023"
-          hours="21:30"
-          brasão1={bahia}
-          brasão2={CRB}
-          sigla1="ECB"
-          sigla2="CRB"
-          placar1={3}
-          placar2={0}
-        />
-        <LastGame
-          competicao="Campeonato Baiano"
-          date="14-03-2023"
-          hours="21:30"
-          brasão1={fluminense}
-          brasão2={bahia}
-          sigla1="ECB"
-          sigla2="FLU"
-          placar1={1}
-          placar2={1}
-        />
-        <LastGame
-          competicao="Campeonato Baiano"
-          date="22-03-2023"
-          hours="21:30"
-          brasão1={CRB}
-          brasão2={bahia}
-          sigla1="CRB"
-          sigla2="ECB"
-          placar1={1}
-          placar2={4}
-        />
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            fontFamily={"OpenSans"}
+            fontWeight={700}
+            sx={{ color: "black" }}
+          >
+            Próximos Jogos
+          </Typography>
+          <LastGame
+            competicao="Campeonato Brasileiro"
+            date="23-04-2023"
+            hours="20:00"
+            brasão1={bahia}
+            brasão2={botafogo}
+            sigla1="ECB"
+            sigla2="BTF"
+          />
+          <LastGame
+            competicao="Capa do Brasil"
+            date="27-04-2023"
+            hours="19:00"
+            brasão1={bahia}
+            brasão2={voltaRedonda}
+            sigla1="ECB"
+            sigla2="VRD"
+          />
+          <LastGame
+            competicao="Campeonato Brasileiro"
+            date="27-04-2023"
+            hours="19:00"
+            brasão1={vasco}
+            brasão2={bahia}
+            sigla1="VAS"
+            sigla2="ECB"
+          />
+          <LastGame
+            competicao="Campeonato Brasileiro"
+            date="27-04-2023"
+            hours="19:00"
+            brasão1={bahia}
+            brasão2={curitiba}
+            sigla1="ECB"
+            sigla2="CTB"
+          />
+          <LastGame
+            competicao="Campeonato Brasileiro"
+            date="27-04-2023"
+            hours="19:00"
+            brasão1={santos}
+            brasão2={bahia}
+            sigla1="ECS"
+            sigla2="ECB"
+          />
+
+          <Typography
+            fontFamily={"OpenSans"}
+            fontWeight={700}
+            sx={{ color: "black" }}
+          >
+            últimos Jogos
+          </Typography>
+          <LastGame
+            competicao="Campeonato Baiano"
+            date="15-04-2023"
+            hours="18:30"
+            brasão1={bragantino}
+            brasão2={bahia}
+            sigla1="RRB"
+            sigla2="ECB"
+            placar1={2}
+            placar2={1}
+          />
+          <LastGame
+            competicao="Campeonato Baiano"
+            date="02-04-2023"
+            hours="18:00"
+            brasão1={bahia}
+            brasão2={jacuipense}
+            sigla1="ECB"
+            sigla2="JAC"
+            placar1={3}
+            placar2={0}
+          />
+          <LastGame
+            competicao="Campeonato Baiano"
+            date="22-03-2023"
+            hours="21:30"
+            brasão1={bahia}
+            brasão2={CRB}
+            sigla1="ECB"
+            sigla2="CRB"
+            placar1={3}
+            placar2={0}
+          />
+          <LastGame
+            competicao="Campeonato Baiano"
+            date="14-03-2023"
+            hours="21:30"
+            brasão1={fluminense}
+            brasão2={bahia}
+            sigla1="ECB"
+            sigla2="FLU"
+            placar1={1}
+            placar2={1}
+          />
+          <LastGame
+            competicao="Campeonato Baiano"
+            date="22-03-2023"
+            hours="21:30"
+            brasão1={CRB}
+            brasão2={bahia}
+            sigla1="CRB"
+            sigla2="ECB"
+            placar1={1}
+            placar2={4}
+          />
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Box
@@ -249,10 +268,17 @@ export default function BasicTabs() {
             flexDirection: "column",
           }}
         >
-          <CompetitionComponent
+          <GeneralCompetitionComponent
             titulo="Campeonato Brasileiro Série -A"
             posicao={18}
           />
+
+          <Divider />
+          <GeneralCompetitionComponent titulo="Campeonato Baiano" posicao={2} />
+
+          <Divider />
+          <GeneralCompetitionComponent titulo="Copa do Brasil" posicao={1} />
+
           <Divider />
         </Box>
       </TabPanel>

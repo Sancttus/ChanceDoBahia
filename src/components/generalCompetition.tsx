@@ -24,40 +24,16 @@ interface Props {
   posicao: number;
   titulo: string;
 }
-const CompetitionComponent = ({ posicao, titulo }: Props) => {
-  let situacao = "Rebaixamento";
+const GeneralCompetitionComponent = ({ posicao, titulo }: Props) => {
   let icon = rebaixamento;
-  if (posicao === 1) {
-    situacao = "Campeão";
-    icon = campeao;
-  }
-  if (posicao < 5 && posicao != 1) {
-    situacao = "Libertadores";
-    icon = libertadores;
-  }
-  if (posicao < 7 && posicao > 4) {
-    situacao = "Pré-Libertadores";
-    icon = prelibertadores;
-  }
-  if (posicao < 13 && posicao > 6) {
-    situacao = "Sulamericana";
-    icon = sulamericana;
-  }
-  if (posicao <= 16 && posicao > 12) {
-    situacao = "Meio da Tabela";
-    icon = meiodatabela;
-  }
-  if (posicao > 16) {
-    situacao = "Rebaixamento";
-    icon = rebaixamento;
-  }
+
   return (
     <Paper
       sx={{
         display: "flex",
         minWidth: 355,
         width: 355,
-        minHeight: 160,
+        minHeight: 60,
         margin: 2,
       }}
     >
@@ -108,50 +84,6 @@ const CompetitionComponent = ({ posicao, titulo }: Props) => {
             </Typography>
           </Stack>
           <Stack direction="column" gap={2}>
-            <Typography
-              sx={{ alignSelf: "center" }}
-              fontFamily="OpenSans"
-              fontSize="12px"
-              fontWeight={700}
-            >
-              Previsão: {posicao}ª Colocação
-            </Typography>
-            <Paper
-              sx={{
-                justifyContent: "center",
-                display: "flex",
-                flexDirection: "column",
-                height: "70px",
-                maxWidth: "80%",
-                background: "#eeeeee",
-                marginLeft: "24px",
-              }}
-            >
-              <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="space-around"
-                padding="0px 30px"
-              >
-                <Typography fontFamily="OpenSans" fontWeight={700}>
-                  {" "}
-                  {situacao}{" "}
-                </Typography>
-
-                <Avatar
-                  src={icon}
-                  sx={{
-                    padding: "10px",
-                    background: "#006cb5",
-
-                    height: "20px",
-                    width: "20px",
-                    marginLeft: "10px",
-                  }}
-                />
-              </Stack>
-            </Paper>
-
             <Stack direction="row" alignItems="center" justifyContent="center">
               <Typography
                 sx={{ alignSelf: "center" }}
@@ -160,8 +92,14 @@ const CompetitionComponent = ({ posicao, titulo }: Props) => {
               >
                 Posição Atual:
               </Typography>
-              <Typography fontFamily="OpenSans" fontSize="14px">
-                1ª Colocação
+
+              <Typography
+                fontFamily="OpenSans"
+                fontSize="14px"
+                fontWeight={700}
+                sx={{ marginLeft: "10px" }}
+              >
+                {posicao}ª Colocação
               </Typography>
             </Stack>
           </Stack>
@@ -171,4 +109,4 @@ const CompetitionComponent = ({ posicao, titulo }: Props) => {
   );
 };
 
-export default CompetitionComponent;
+export default GeneralCompetitionComponent;
