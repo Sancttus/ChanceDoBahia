@@ -22,31 +22,55 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { Avatar } from "@mui/material";
 
-interface Data {
-  numero: number;
-  avatar: any;
-  nome: string;
-  posicao: string;
-}
 
-function createData(
-  numero: number,
-  avatar: any,
-  nome: string,
-  posicao: string
-): Data {
-  return {
-    numero,
-    avatar,
-    nome,
-    posicao,
-  };
-}
 
-const rows = [
-  createData(1, "RC", "Rodrigo Castro", "GK"),
-  createData(2, "EV", "Everton Ribeiro", "AT"),
-];
+
+interface Elenco {
+  
+    Posicao: string;
+    Nome: string;
+    Numero: number;
+    Titular: string;
+    Avatar: any;
+
+ 
+
+}
+const elenco: Array<Elenco> = [
+  { Posicao: "Goleiro", Nome: "Tiago Gomes", Numero: 12, Titular: 'Reserva', Avatar: ''  },
+  { Posicao: "Goleiro", Nome: "Marcos Felipe", Numero: 22, Titular: 'Titular', Avatar: '' },
+  { Posicao: "Goleiro", Nome: "Mateus Claus", Numero: 77, Titular: 'Reserva', Avatar: '' },
+  { Posicao: "Goleiro", Nome: "Danilo Fernandes", Numero: 1, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Lateral", Nome: "Cicinho", Numero: 40, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Lateral", Nome: "André", Numero: 13, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Lateral", Nome: "Ryan", Numero: 66, Titular: 'Reserva', Avatar: '' },
+  { Posicao: "Lateral", Nome: "Jhoanner Chaves", Numero: 6, Titular: 'Titular' , Avatar: ''},
+  { Posicao: "Lateral", Nome: "Matheus Bahia", Numero: 79, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Zagueiro", Nome: "David Duarte", Numero: 33, Titular: 'Reserva', Avatar: '' },
+  { Posicao:  "Zagueiro", Nome: "Kanu", Numero: 4, Titular: 'Titular' , Avatar: ''},
+  { Posicao:  "Zagueiro", Nome: "Marcos Vitor", Numero: 44, Titular: 'Reserva' , Avatar: ''},
+  { Posicao:  "Zagueiro", Nome: "Raul Gustavo", Numero: 34, Titular: 'Reserva', Avatar: '' },
+  { Posicao:  "Zagueiro", Nome: "Gabriel Xavier", Numero: 3, Titular: 'Titular' , Avatar: ''},
+  { Posicao: "Meio-Campista", Nome: "Thaciano", Numero: 28, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Meio-Campista", Nome: "Yago Felipe", Numero: 20, Titular: 'Titular' , Avatar: ''},
+  { Posicao: "Meio-Campista", Nome: "Cauly", Numero: 8, Titular: 'Titular', Avatar: '' },
+  { Posicao: "Meio-Campista", Nome: "Diego Rosa", Numero: 17, Titular: 'Reserva', Avatar: '' },
+  { Posicao: "Meio-Campista", Nome: "Ricardo Goulart", Numero: 16, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Meio-Campista", Nome: "Patrick Verhom", Numero: 23, Titular: 'Reserva', Avatar: '' },
+  { Posicao: "Meio-Campista", Nome: "Acevedo", Numero: 26, Titular: 'Titular' , Avatar: ''},
+  { Posicao: "Meio-Campista", Nome: "Rezende", Numero: 5, Titular: 'Titular', Avatar: '' },
+  { Posicao: "Meio-Campista", Nome: "Daniel", Numero: 10, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Meio-Campista", Nome: "Lucas Mugni", Numero: 19, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Atacante", Nome: "Ademir", Numero: 7, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Atacante", Nome: "Arthur Sales", Numero: 14, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Atacante", Nome: "Kayky", Numero: 37, Titular: 'Titular', Avatar: '' },
+  { Posicao: "Atacante", Nome: "Everton", Numero: 18, Titular: 'Reserva' , Avatar: ''},
+  { Posicao: "Atacante", Nome: "Biel", Numero: 11, Titular: 'Reserva' , Avatar:''},
+  { Posicao: "Atacante", Nome: "Everaldo", Numero: 9, Titular: 'Titular' , Avatar: ''},
+  { Posicao: "Atacante", Nome: "Vitor Jacaré", Numero: 29, Titular: 'Titular', Avatar: '' },
+  { Posicao: "Atacante", Nome: "Kennedy", Numero: 71, Titular: 'Reserva', Avatar: '' },
+]
+
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -89,47 +113,53 @@ function stableSort<T>(
 
 interface HeadCell {
   disablePadding: boolean;
-  id: keyof Data;
+  id: keyof Elenco;
   label: string;
   numeric: boolean;
 }
 
 const headCells: readonly HeadCell[] = [
   {
-    id: "numero",
+    id: "Numero",
     numeric: false,
     disablePadding: true,
     label: "Número",
   },
   {
-    id: "avatar",
+    id: "Avatar",
     numeric: false,
     disablePadding: false,
     label: "Foto",
   },
   {
-    id: "nome",
+    id: "Nome",
     numeric: true,
     disablePadding: false,
     label: "Nome",
   },
   {
-    id: "posicao",
+    id: "Posicao",
     numeric: true,
     disablePadding: false,
     label: "Posição",
   },
+  {
+    id: "Titular",
+    numeric: true,
+    disablePadding: false,
+    label: "Titular",
+  },
 ];
 
 const DEFAULT_ORDER = "asc";
-const DEFAULT_ORDER_BY = "numero";
+const DEFAULT_ORDER_BY = "Numero";
 const DEFAULT_ROWS_PER_PAGE = 5;
 
 interface EnhancedTableProps {
   numSelected: number;
   onRequestSort: (
     event: React.MouseEvent<unknown>,
-    newOrderBy: keyof Data
+    newOrderBy: keyof Elenco
   ) => void;
   onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   order: Order;
@@ -147,7 +177,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     onRequestSort,
   } = props;
   const createSortHandler =
-    (newOrderBy: keyof Data) => (event: React.MouseEvent<unknown>) => {
+    (newOrderBy: keyof Elenco) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, newOrderBy);
     };
 
@@ -208,17 +238,17 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
 
 export default function EnhancedTable() {
   const [order, setOrder] = React.useState<Order>(DEFAULT_ORDER);
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("numero");
+  const [orderBy, setOrderBy] = React.useState<keyof Elenco>("Numero");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
-  const [visibleRows, setVisibleRows] = React.useState<Data[] | null>(null);
+  const [visibleRows, setVisibleRows] = React.useState<Elenco[] | null>(null);
   const [rowsPerPage, setRowsPerPage] = React.useState(DEFAULT_ROWS_PER_PAGE);
   const [paddingHeight, setPaddingHeight] = React.useState(0);
 
   React.useEffect(() => {
     let rowsOnMount = stableSort(
-      rows,
+      elenco,
       getComparator(DEFAULT_ORDER, DEFAULT_ORDER_BY)
     );
     rowsOnMount = rowsOnMount.slice(
@@ -231,7 +261,7 @@ export default function EnhancedTable() {
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
-    property: keyof Data
+    property: keyof Elenco
   ) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -240,7 +270,7 @@ export default function EnhancedTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.nome);
+      const newSelected = elenco.map((n) => n.Nome);
       setSelected(newSelected);
       return;
     }
@@ -268,14 +298,17 @@ export default function EnhancedTable() {
   };
 
   return (
+
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer sx={{ padding: "10px" }}>
+
           <Table
             sx={{ minWidth: 375 }}
             aria-labelledby="tableTitle"
             size={"small"}
+
           >
             <EnhancedTableHead
               numSelected={selected.length}
@@ -283,45 +316,55 @@ export default function EnhancedTable() {
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={elenco.length}
             />
             <TableBody>
-              {visibleRows
-                ? visibleRows.map((row, index) => {
-                    const labelId = `enhanced-table-checkbox-${index}`;
+              {elenco
+                ? elenco.map((row, index) => {
+                  const labelId = `enhanced-table-checkbox-${index}`;
 
-                    return (
-                      <TableRow
-                        hover
-                        onClick={(event) => handleClick(event, row.nome)}
-                        role="checkbox"
-                        tabIndex={-1}
-                        key={row.numero}
-                        sx={{ cursor: "pointer" }}
+                  return (
+
+                    <TableRow
+                      hover
+                      onClick={(event) => handleClick(event, row.Nome)}
+                      role="checkbox"
+                      tabIndex={-1}
+                      key={row.Numero}
+                      sx={{ cursor: "pointer" }}
+                    >
+
+                      <TableCell
+                        component="th"
+                        id={labelId}
+                        scope="row"
+                        padding="none"
                       >
-                        <TableCell
-                          component="th"
-                          id={labelId}
-                          scope="row"
-                          padding="none"
-                        >
-                          {row.numero}
-                        </TableCell>
-                        <TableCell
-                          component="th"
-                          id={labelId}
-                          scope="row"
-                          padding="none"
-                        >
-                          <Avatar>{row.avatar}</Avatar>
-                        </TableCell>
-                        <TableCell align="right">{row.nome}</TableCell>
-                        <TableCell align="right">{row.posicao}</TableCell>
-                      </TableRow>
-                    );
-                  })
+                        {row.Numero}
+                      </TableCell>
+                      <TableCell
+                        component="th"
+                        id={labelId}
+                        scope="row"
+                        padding="none"
+                      >
+
+                        <Avatar>{}</Avatar>
+                      </TableCell>
+
+                      <TableCell align="right">{row.Nome}</TableCell>
+                      <TableCell align="right">{row.Posicao}</TableCell>
+                      <TableCell align="right">{row.Titular}</TableCell>
+
+
+                    </TableRow>
+
+                  );
+                })
                 : null}
             </TableBody>
+
+
           </Table>
         </TableContainer>
       </Paper>
