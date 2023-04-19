@@ -93,7 +93,7 @@ const MatchComponent = ({
             justifyContent="space-around"
             sx={{ width: "40%" }}
           >
-            <Typography fontFamily="OpenSans" fontWeight={700}>
+            <Typography fontFamily="OpenSans" fontSize={20} fontWeight={700}>
               {prediction}%{" "}
             </Typography>{" "}
             <Avatar sx={{ background: "#d7edfc" }}>

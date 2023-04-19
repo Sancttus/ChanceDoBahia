@@ -361,12 +361,12 @@ const headCells: readonly HeadCell[] = [
     disablePadding: false,
     label: "Posição",
   },
-  {
-    id: "Titular",
-    numeric: true,
-    disablePadding: false,
-    label: "Titular",
-  },
+  // {
+  //   id: "Titular",
+  //   numeric: true,
+  //   disablePadding: false,
+  //   label: "Titular",
+  // },
 ];
 
 const DEFAULT_ORDER = "asc";
@@ -516,7 +516,7 @@ export default function EnhancedTable() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", minWidth: 375 }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer sx={{ padding: "auto" }}>
@@ -566,7 +566,6 @@ export default function EnhancedTable() {
 
                         <TableCell align="right">{row.Nome}</TableCell>
                         <TableCell align="right">{row.Posicao}</TableCell>
-                        <TableCell align="right">{row.Titular}</TableCell>
                       </TableRow>
                     );
                   })

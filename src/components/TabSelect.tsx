@@ -30,6 +30,7 @@ import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import SportsIcon from "@mui/icons-material/Sports";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
+import { Card } from "@mui/material";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -148,13 +149,27 @@ export default function BasicTabs() {
             alignItems: "center",
           }}
         >
-          <Typography
-            fontFamily={"OpenSans"}
-            fontWeight={700}
-            sx={{ color: "black" }}
+          <Box
+            sx={{
+              background: "#006cb5",
+              borderRadius: "20px",
+              width: "350px",
+              margin: "40px",
+            }}
           >
-            Próximos Jogos
-          </Typography>
+            <Typography
+              fontFamily={"OpenSans"}
+              fontWeight={700}
+              sx={{
+                color: "white",
+                margin: "20px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              Próximos Jogos
+            </Typography>
+          </Box>
           <LastGame
             competicao="Campeonato Brasileiro"
             date="23-04-2023"
@@ -200,14 +215,29 @@ export default function BasicTabs() {
             sigla1="ECS"
             sigla2="ECB"
           />
-
-          <Typography
-            fontFamily={"OpenSans"}
-            fontWeight={700}
-            sx={{ color: "black" }}
+          <Divider />
+          <Box
+            sx={{
+              background: "#006cb5",
+              borderRadius: "20px",
+              width: "350px",
+              margin: "40px",
+            }}
           >
-            últimos Jogos
-          </Typography>
+            <Typography
+              fontFamily={"OpenSans"}
+              fontWeight={700}
+              sx={{
+                color: "white",
+                margin: "20px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              últimos Jogos
+            </Typography>
+          </Box>
+          <Divider />
           <LastGame
             competicao="Campeonato Baiano"
             date="15-04-2023"
