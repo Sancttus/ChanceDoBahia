@@ -20,7 +20,7 @@ import curitiba from "../assets/curitiba.png";
 import bragantino from "../assets/red-bull-bragantino.svg";
 import botafogo from "../assets/botafogo.png";
 import voltaRedonda from "../assets/volta_redonda.png";
-import bglogo from "../assets/fotor_2023-4-19_9_8_35.png";
+import bglogo from "../assets/logobgg.png";
 import Predictions from "./predictions";
 import GeneralCompetitionComponent from "./generalCompetition";
 
@@ -85,16 +85,21 @@ export default function BasicTabs() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundAttachment: "scroll",
-        backgroundBlendMode: "soft-light",
+        backgroundBlendMode: "color-burn",
+        backgroundSize: "100%",
       }}
     >
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box
+        sx={{
+          maxWidth: { xs: 320, sm: 480 },
+          color: "black",
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
           variant="scrollable"
           scrollButtons
-          sx={{ fontFamily: "Play" }}
           allowScrollButtonsMobile
         >
           <Tab

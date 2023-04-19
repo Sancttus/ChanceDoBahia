@@ -14,6 +14,7 @@ import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import SportsIcon from "@mui/icons-material/Sports";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
+import CloseIcon from "@mui/icons-material/Close";
 type Anchor = "top" | "left" | "bottom" | "right";
 
 const data = [
@@ -55,6 +56,9 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <Box display="flex" justifyContent={"flex-end"} sx={{ padding: "20px" }}>
+        <CloseIcon sx={{ cursor: "pointer" }} />
+      </Box>
       <List>
         {data.map((item, index) => (
           <ListItem key={index}>
