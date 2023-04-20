@@ -341,7 +341,7 @@ const headCells: readonly HeadCell[] = [
     id: "Numero",
     numeric: false,
     disablePadding: true,
-    label: "Número",
+    label: "N°",
   },
   {
     id: "Avatar",
@@ -510,12 +510,12 @@ export default function EnhancedTable() {
   };
 
   return (
-    <Box sx={{ width: "100%", minWidth: 375 }}>
-      <Paper sx={{ width: "100%", mb: 2 }}>
+    <Box sx={{}}>
+      <Paper sx={{}}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer sx={{ padding: "auto" }}>
           <Table
-            sx={{ minWidth: 375, padding: "0 10px" }}
+            sx={{ padding: "10px 10px" }}
             aria-labelledby="tableTitle"
             size={"small"}
           >
