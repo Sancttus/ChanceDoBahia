@@ -364,7 +364,7 @@ const headCells: readonly HeadCell[] = [
 ];
 
 const DEFAULT_ORDER = "asc";
-const DEFAULT_ORDER_BY = "Numero";
+const DEFAULT_ORDER_BY = "Nome";
 const DEFAULT_ROWS_PER_PAGE = 5;
 
 interface EnhancedTableProps {
@@ -450,7 +450,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
 
 export default function EnhancedTable() {
   const [order, setOrder] = React.useState<Order>(DEFAULT_ORDER);
-  const [orderBy, setOrderBy] = React.useState<keyof Elenco>("Numero");
+  const [orderBy, setOrderBy] = React.useState<keyof Elenco>();
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -513,16 +513,16 @@ export default function EnhancedTable() {
     <Box sx={{}}>
       <Paper sx={{}}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer sx={{ padding: "auto" }}>
+        <TableContainer sx={{ padding: "auto", width: "100%" }}>
           <Table
-            sx={{ padding: "10px 10px" }}
+            sx={{ padding: "10px 10px", width: "100%" }}
             aria-labelledby="tableTitle"
             size={"small"}
           >
             <EnhancedTableHead
               numSelected={selected.length}
               order={order}
-              orderBy={orderBy}
+              orderBy={""}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={elenco.length}
