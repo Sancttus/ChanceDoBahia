@@ -361,12 +361,6 @@ const headCells: readonly HeadCell[] = [
     disablePadding: false,
     label: "Posição",
   },
-  // {
-  //   id: "Titular",
-  //   numeric: true,
-  //   disablePadding: false,
-  //   label: "Titular",
-  // },
 ];
 
 const DEFAULT_ORDER = "asc";
@@ -406,7 +400,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? "right" : "left"}
-            padding={headCell.disablePadding ? "none" : "normal"}
+            padding={"normal"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
@@ -521,7 +515,7 @@ export default function EnhancedTable() {
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer sx={{ padding: "auto" }}>
           <Table
-            sx={{ minWidth: 375 }}
+            sx={{ minWidth: 375, padding: "0 10px" }}
             aria-labelledby="tableTitle"
             size={"small"}
           >
@@ -551,7 +545,7 @@ export default function EnhancedTable() {
                           component="th"
                           id={labelId}
                           scope="row"
-                          padding="none"
+                          padding="normal"
                         >
                           {row.Numero}
                         </TableCell>
@@ -559,7 +553,7 @@ export default function EnhancedTable() {
                           component="th"
                           id={labelId}
                           scope="row"
-                          padding="none"
+                          padding="normal"
                         >
                           <Avatar src={row.Avatar}></Avatar>
                         </TableCell>

@@ -16,19 +16,25 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 import CloseIcon from "@mui/icons-material/Close";
 import { Typography } from "@mui/material";
+import MenuContext from "../context/global/MenuContext";
+import { useContext } from "react";
+import MenuProvider from "../context/global/MenuProvider";
 type Anchor = "top" | "left" | "bottom" | "right";
 
 const data = [
   {
+    id: 0,
     name: "Chances",
     icon: <SwapVerticalCircleIcon />,
   },
-  { name: "Partidas", icon: <SportsSoccerIcon /> },
-  { name: "Competições", icon: <SportsIcon /> },
-  { name: "Elenco", icon: <GroupsIcon /> },
-  { name: "Conquistas", icon: <EmojiEventsIcon /> },
+  { id: 1, name: "Partidas", icon: <SportsSoccerIcon /> },
+  { id: 2, name: "Competições", icon: <SportsIcon /> },
+  { id: 3, name: "Elenco", icon: <GroupsIcon /> },
+  { id: 4, name: "Conquistas", icon: <EmojiEventsIcon /> },
 ];
 export default function TemporaryDrawer() {
+  const { aba, setAba }: any = useContext(MenuContext);
+
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -46,34 +52,41 @@ export default function TemporaryDrawer() {
       ) {
         return;
       }
-
       setState({ ...state, [anchor]: open });
     };
-
+  const handleClick = (index: number) => {
+    setAba(index);
+  };
   const list = (anchor: Anchor) => (
-    <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
+    <MenuProvider>
       <Box
-        display="flex"
-        justifyContent={"space-between"}
-        sx={{ padding: "20px" }}
+        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
       >
-        <Typography fontWeight={700}>Menu</Typography>
-        <CloseIcon sx={{ cursor: "pointer" }} />
+        <Box
+          display="flex"
+          justifyContent={"space-between"}
+          sx={{ padding: "20px" }}
+        >
+          <Typography fontWeight={700}>Menu</Typography>
+          <CloseIcon sx={{ cursor: "pointer" }} />
+        </Box>
+        <List>
+          {data.map((item, index) => (
+            <ListItem
+              sx={{ cursor: "pointer" }}
+              key={index}
+              onClick={() => handleClick(item.id)}
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.name} />
+            </ListItem>
+          ))}
+        </List>
       </Box>
-      <List>
-        {data.map((item, index) => (
-          <ListItem key={index}>
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.name} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+    </MenuProvider>
   );
 
   return (
